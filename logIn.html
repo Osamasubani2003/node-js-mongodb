@@ -37,14 +37,21 @@
             margin-top: 50px;
         }
     </style>
+        <script> 
+            function onload() {
+                var current = localStorage.setItem('currentUser');
+                document.getElementById("email").value = current.email;
+            }
+        </script>
 </head>
 <body>
     <h1>LOG IN</h1>
-    <form>
+    <form action="http://localhost:9000/login" method="post">
         <input type="text" class="a"name="userName" placeholder="userName"><br>
         <input type="email"class="a" name="email" placeholder="email"><br>
         <input type="password"class="a" name="password" placeholder="password"><br>
-        <button type="button" class="btn btn-primary">log in</button>
+        <button type="submit" class="btn btn-primary">log in</button>
+        
     </form>
 </body>
 </html>
